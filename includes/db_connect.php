@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = ""; // สำหรับ XAMPP ปกติจะเว้นว่าง
-$dbname = "db_equipment_borrow";
+$servername = "dpg-d5eufv2li9vc73d7hadg-a"; // Host ของ Render
+$username = "borrow_system_db_bl55_user";                   // Username ของ Render
+$password = "ejslbBGv4SpDpIeFdwuMQX51UPUWHMo8";                   // Password ของ Render
+$dbname = "borrow_system_db";               // ชื่อฐานข้อมูลบน Render
 
 // เชื่อมต่อฐานข้อมูล
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,5 +13,4 @@ if ($conn->connect_error) {
 }
 
 $conn->set_charset("utf8");
-
 ?>
