@@ -3,7 +3,7 @@ $host     = "dpg-d5eufv2li9vc73d7hadg-a";
 $port     = "5432";                         
 $dbname   = "borrow_system_db_bl55";       
 $user     = "borrow_system_db_bl55_user";  
-$password = "รหัสผ่านของคุณ";              
+$password = "ejslbBGv4SpDpIeFdwuMQX51UPUWHMo8";              
 
 try {
     $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
