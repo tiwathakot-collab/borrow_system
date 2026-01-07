@@ -5,11 +5,10 @@ $dbname   = "borrow_system_db_bl55";
 $user     = "borrow_system_db_bl55_user";  
 $password = "ejslbBGv4SpDpIeFdwuMQX51UPUWHMo8";              
 
-try {
-    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // ❌ ไม่ต้อง echo อะไร
-} catch (PDOException $e) {
-    die("❌ การเชื่อมต่อฐานข้อมูลล้มเหลว: " . $e->getMessage());
-}
+// include wrapper
+require_once __DIR__ . '/PDOWrapper.php';
+
+// สร้าง instance
+$dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+$conn = new PDOWrapper($dsn, $user, $password);
 ?>
