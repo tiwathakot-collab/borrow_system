@@ -1,16 +1,17 @@
-# ใช้ PHP 8.0 CLI
+# ใช้ PHP CLI 8.0
 FROM php:8.0-cli
 
-# ติดตั้ง mysqli และ dependencies
-RUN docker-php-ext-install mysqli
+# ติดตั้ง dependencies สำหรับ PostgreSQL และ PHP extension
+RUN apt-get update && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo_pgsql pgsql
 
 # กำหนด working directory
 WORKDIR /app
 
-# คัดลอกโค้ดไปยัง container
+# คัดลอกโค้ดโปรเจคไป container
 COPY . /app
 
-# เปิด port 10000
+# เปิด port ให้ PHP built-in server
 EXPOSE 10000
 
 # รัน PHP built-in server
