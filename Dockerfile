@@ -1,14 +1,17 @@
 # ใช้ PHP 8.0 CLI
 FROM php:8.0-cli
 
+# ติดตั้ง mysqli และ dependencies
+RUN docker-php-ext-install mysqli
+
 # กำหนด working directory
 WORKDIR /app
 
-# คัดลอกไฟล์ทั้งหมดจาก repo ไปยัง container
+# คัดลอกโค้ดไปยัง container
 COPY . /app
 
-# เปิด port 10000 สำหรับ PHP built-in server
+# เปิด port 10000
 EXPOSE 10000
 
-# รัน PHP server
+# รัน PHP built-in server
 CMD ["php", "-S", "0.0.0.0:10000"]
