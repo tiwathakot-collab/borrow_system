@@ -1,0 +1,32 @@
+/* ปุ่มกลับ (ใช้ร่วมทุกหน้า) */
+.back-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto !important;      /* กันปุ่มยืดเต็มจอ */
+    min-width: unset !important;
+    max-width: unset !important;
+
+    padding: 6px 14px;
+    border: 2px solid #2196F3;
+    border-radius: 25px;
+
+    background: transparent;
+    color: #2196F3;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #2196F3;
+    color: #fff;
+}
